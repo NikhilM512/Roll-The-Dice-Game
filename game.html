@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roll The Dice Game</title>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100%;
+            min-height: 100vh;
+            background-color: #ccc;
+            /* background-image: url("https://media.istockphoto.com/id/89504250/photo/lucky-says.webp?b=1&s=170667a&w=0&k=20&c=6yjTsiRhoJhOgGLJgt-ieC_-OyahGDeUpP6nnXrC2ao="); */
+        }
+
+        .hstack{
+            display: flex;
+            flex-direction: row;
+            justify-content:space-between;
+            /* border: 2px solid #ccc; */
+            align-items: center;
+        }
+
+        #navbar{
+            height: 70px;
+            background-color: purple;
+            border-radius: 7px;
+        }
+
+        #navbar h2{
+            margin-left: 5%;
+            color: tomato;
+        }
+        
+        #navbar div{
+            margin-right: 5%;
+        }
+
+        #navbar img{
+            width: 30px;
+            height: 30px;
+            margin-left: 5%;
+        }
+
+        #navbar h2{
+            color: tomato;
+            margin-right: 5%;
+        }
+
+        #box-2{
+            justify-content: right;
+            margin-right: 3%;
+            padding-top: 2%;
+        }
+
+        #box-2 h3{
+            color: yellowgreen;
+            font-style: normal;
+            font-weight: bold;
+        }
+
+        #audio{
+            margin-right: 1%;
+        }
+
+        #audio:hover,#box-3:hover{
+            cursor: pointer;
+        }
+
+        .logos{
+            width: 30px;
+        }
+        #box-3{
+            /* border: 2px solid #ccc; */
+            padding: 5px;
+            background-color: green;
+            color: tomato;
+            border-radius: 10px;
+        }
+        #heading2,#nickname{
+            text-align: center;
+            color: green;
+            font-family:'poppins' ;
+        }
+
+        #nickname{
+            margin-top: 70px;
+        }
+
+        #container{
+            display: flex;
+            margin-top: 2%;
+            /* border: 2px solid red; */
+            justify-content: center;
+        }
+
+        #box1{
+            margin-right: 2%;
+        }
+
+        #box2{
+            margin-left: 2%;
+        }
+
+        #box1,#box2{
+            width: 20%;
+            border:3px solid #ccc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #box1 div,#box2 div{
+            text-align: center;
+        }
+
+        #box1 h3,#box2 h3{
+            font-size: x-large;
+           
+        }
+
+        #box1>h3,#box2>h3{
+            margin-bottom: 10px;
+            color: purple;
+        }
+
+        #box1>div h3,#box2>div h3{
+            margin-top: 10px;
+            color: green;
+        }
+
+        #box1 h4,#box2 h4{
+            font-size: x-large;
+            color: green;
+        }
+        #dice1,#dice2{
+            width: 100px;
+            height: 100px;
+        }
+
+        button{
+            display: block;
+            margin: auto;
+            margin-top: 2%;
+            padding: 10px;
+            font-size: large;
+            color: white;
+            background-color: rgb(209, 3, 3);
+            border-radius: 7px;
+            font-weight: 550;
+            border: 0px;
+        }
+
+        button:hover{
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="navbar" class="hstack">
+           <h2>Dice Roll Game App</h2>
+           <div class="hstack">
+            <!-- <h2 id="time">Time :- 30 sec</h2> -->
+            <h2 id="name"></h2>
+            <img src="./assests/profile.png" alt="profile-pic">
+          </div>
+    </div>
+    <div id="box-2" class="hstack">
+        <img id="audio" class="logos" src="./assests/audio-speaker-on.png"  alt="audio_logo">
+        <div id="box-3" class="hstack">
+            <h3>Read Instructrions</h3>
+            <img id="user-guide" class="logos" src="./assests//user-guide.png" alt="">
+        </div>
+    </div>
+    <h1 id="nickname"></h1>
+    <h1 id="heading2">Let's Start. <span>Roll The Dice</span></h1>
+    
+    <div id="container">
+        <div id="box1"  class="dices-box">
+            <h3 id="Name"></h3>
+            <img id="dice1" src="./assests/dice (1).png" alt="dice_1_img"  class="dices">
+            <div>
+                <h3>Score</h3>
+                <h4 id="score1">0</h4>
+            </div>
+        </div>
+
+            <div id="box2" class="dices-box">
+                <h3>Anonymous</h3>
+                <img id="dice2" src="./assests/dice (1).png" alt="dice_1_img"  class="dices">
+                <div>
+                    <h3>Score</h3>
+                    <h4 id="score2">0</h4>
+                </div>
+            </div>
+    </div>
+</div>
+    <button onclick="rollTheDice()">Roll The Dice</button>
+</body>
+<script>
+
+    function rollTheDice(){
+        
+        let n1 = Math.random()*6;
+        n1 = Math.floor(n1);
+
+        let n2 = Math.random()*6;
+        n2 = Math.floor(n2);
+
+        if(n1==0){
+            n1=1
+        }else if(n2==0){
+            n2=1
+        }
+        
+        let score1 = document.getElementById("score1");
+
+        let score2 = document.getElementById("score2");
+
+        score1.innerHTML = n1;
+        score2.innerHTML = n2;
+
+        let dice1 = document.getElementById("dice1");
+        dice1.src=`./assests/dice (${n1}).png`
+        let dice2 = document.getElementById("dice2");
+        dice2.src=`./assests/dice (${n2}).png`
+
+        let player1=JSON.parse(localStorage.getItem("Name"));
+        let player2="Anonymous";
+        localStorage.setItem("Player1Name",JSON.parse(n1));
+        localStorage.setItem("Player2Name",JSON.parse(n2));
+
+        if(n1>n2){
+            localStorage.setItem("Winner",JSON.parse(player1));
+            localStorage.setItem("Loser",JSON.parse(player2));
+            localStorage.setItem("Player1Score",JSON.parse(n1));
+            localStorage.setItem("Player2Score",JSON.parse(n2));
+        }else if(n1<n2){
+            localStorage.setItem("Winner",JSON.parse(player2));
+            localStorage.setItem("Loser",JSON.parse(player1));
+            localStorage.setItem("Player1Score",JSON.parse(n2));
+            localStorage.setItem("Player2Score",JSON.parse(n1));
+        }else{
+            localStorage.setItem("Winner",JSON.parse("DRAW"));
+            localStorage.setItem("Loser",JSON.parse("DRAW"));
+            localStorage.setItem("Player1Score",JSON.parse(n2));
+            localStorage.setItem("Player2Score",JSON.parse(n1));
+        }
+    }
+
+    // start();
+
+    // let id;
+
+    // function start(){
+
+    //     let time = document.getElementById("time").innerText;
+
+    //     if(time==0){
+    //         clearInterval(id)
+    //         alert('stop')
+    //     }
+
+    //     id=setInterval(()=>{
+           
+    //         time=time-1;
+
+    //         document.getElementById("time").innerText=time;
+    //     },100)
+    // }
+
+    addPlayersNames();
+
+    function addPlayersNames(){
+
+         let nickname = JSON.parse(localStorage.getItem("Nickname"));
+
+         let heading = document.getElementById("nickname");
+
+         heading.innerText = `Hello ${nickname}👋`;
+
+         let name = JSON.parse(localStorage.getItem("Name"));
+
+         let Navbar_Name = document.getElementById("name");
+
+         Navbar_Name.innerText = `${name}`;
+
+         let Player1_Name = document.getElementById("Name");
+
+         Player1_Name.innerText = `${name}`;
+    }
+
+ 
+
+    
+
+
+
+</script>
+</html>
