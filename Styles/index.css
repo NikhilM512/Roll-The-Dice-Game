@@ -5,12 +5,14 @@
 }
 
 body{
+    width: 100%;
     background-color: bisque;
     font-family:'poppins';
+    
 }
 
 form{
-    border: 3px solid rgb(133, 133, 133);
+    border: 3px solid red;
     width: 33%;
     margin: auto;
     display: flex;
@@ -28,7 +30,11 @@ form{
     margin-top: 100px;
     color: rgb(255, 0, 0);
     font-family: 'poppins';
-    font-weight: bold;
+    text-transform: capitalize;
+    font-weight: bolder;
+    font-size: xxx-large;
+    font-variant: small-caps;
+    font-style:inherit;
 }
 
 label{
@@ -58,9 +64,30 @@ input{
     padding: 1%;
 }
 
+#container{
+    width: 100%;
+    min-height: 115vh;
+    border: 1px solid bisque;
+    position: relative;
+}
+
 #submit:hover{
     cursor: pointer;
 }
+
+.background-clip{
+    min-height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    top:0;
+    bottom: 0;
+    left:0;
+    object-fit: cover;
+}
+
+
 
 @media screen and (max-width: 767px) {
     form{

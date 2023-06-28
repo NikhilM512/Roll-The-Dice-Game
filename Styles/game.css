@@ -7,7 +7,7 @@
 body{
     width: 100%;
     min-height: 100vh;
-    background-color: #ccc;
+    background-color: bisque;
     font-family:'poppins';
     /* background-image: url("https://media.istockphoto.com/id/89504250/photo/lucky-says.webp?b=1&s=170667a&w=0&k=20&c=6yjTsiRhoJhOgGLJgt-ieC_-OyahGDeUpP6nnXrC2ao="); */
 }
@@ -57,6 +57,7 @@ body{
     color: yellowgreen;
     font-style: normal;
     font-weight: bold;
+    font-size: medium;
 }
 
 #audio{
@@ -84,7 +85,7 @@ body{
 }
 
 #nickname{
-    margin-top: 70px;
+    margin-top: 20px;
 }
 
 #container{
@@ -104,56 +105,105 @@ body{
 
 #box1,#box2{
     width: 20%;
-    border:3px solid #ccc;
+    /* border:3px solid #ccc; */
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
 #box1 div,#box2 div{
     text-align: center;
+    background-color: #000;
+    margin-top: 10%;
+    border-radius: 10px;
+    width: 100px;
+    border: 2px solid red;
 }
 
 #box1 h3,#box2 h3{
     font-size: x-large;
-   
+    font-family: "Atma";
 }
 
 #box1>h3,#box2>h3{
     margin-bottom: 10px;
-    color: purple;
+    color: red;
+    background-color: #000;
+    padding: 5%;
+    border-radius: 10px;
+    width: 175px;
+    border: 2px solid red;
+    font-family: "Atma";
 }
 
 #box1>div h3,#box2>div h3{
     margin-top: 10px;
-    color: green;
+    color: red;
+   
 }
 
 #box1 h4,#box2 h4{
     font-size: x-large;
-    color: green;
+    color: red;
+    margin-bottom: 2%;
 }
 #dice1,#dice2{
     width: 100px;
     height: 100px;
+    box-shadow: rgba(0,0,0,0.77) 0px 7px 25px;
+    border-radius: 12px;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
 }
 
 button{
     display: block;
     margin: auto;
     margin-top: 2%;
-    padding: 10px;
-    font-size: large;
-    color: white;
-    background-color: rgb(209, 3, 3);
+    padding: 12px;
+    font-size: x-large;
+    color: green;
+    background-color: #000;
     border-radius: 7px;
     font-weight: 550;
     border: 0px;
+    font-family: "Salsa";
+    border: 2px solid green;
+}
+
+#nickname,#heading2{
+    font-family: "Salsa";
 }
 
 button:hover{
     cursor: pointer;
 }
+
+/* #main_box{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black; */
+    /* background-image: url("../assests/riho-kroll-m4sGYaHYN5o-unsplash.jpg"); */
+    /* min-height: 115vh; */
+    /* background-repeat:no-repeat;
+    background-size: cover ; */
+    /* border: 1px solid bisque; */
+    /* position: relative; */
+/* } */
+
+/* .background-clip{
+    min-height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    top:0;
+    bottom: 0;
+    left:0;
+    object-fit: cover;
+} */
 
 @media screen and (max-width: 767px) {
     #navbar h2{
@@ -165,13 +215,16 @@ button:hover{
         width: 80%;
         margin: auto;
         text-align: center;
+        /* border: 2px solid red; */
+        
     }
     #nickname{
-        margin-top: 20%;
+        margin-top: 10%;
+        /* margin-bottom: -50%; */
     }
 
     #heading2{
-        margin-bottom: 10%;
+        margin-bottom: 2%;
     }
 
     #dice1,#dice2{
@@ -181,6 +234,11 @@ button:hover{
 
     #box1 h3,#box2 h3,#box1 h4,#box2 h4{
         font-size: 16px;
+
+    }
+
+    #box1>h3,#box2>h3{
+        width: 100px;
     }
 
     button{

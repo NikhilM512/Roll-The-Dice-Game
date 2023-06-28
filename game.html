@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roll The Dice Game</title>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Salsa' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Atma' rel='stylesheet'>
     <link rel="stylesheet" href="./Styles/game.css">
 </head>
 <body id="body">
@@ -17,15 +19,15 @@
             <img src="./assests/profile.png" alt="profile-pic">
           </div>
     </div>
+     <div id="main_box">
+        <audio id="background-music" src="./assests/neon-gaming-128925.mp3" autoplay></audio>
+        <!-- <video autoplay loop muted plays-inline class="background-clip">
+            <source src="./assests/pexels-shvets-production-9058102 (2160p).mp4" type="video/mp4">
+        </video> -->
+
     <div id="box-2" class="hstack">
         <img id="audio" class="logos" onclick="toggleMusic()" src="./assests/audio-speaker-on.png" alt="audio_logo">
-        <!-- <audio id="audio" src="./assests/neon-gaming-128925.mp3" >
-            <source src="./assests/neon-gaming-128925.mp3">
-            
-        </audio> -->
-
-        <audio id="background-music" src="./assests/neon-gaming-128925.mp3" autoplay></audio>
-
+       
         <div id="box-3" class="hstack">
             <h3>Read Instructrions</h3>
             <img id="user-guide" class="logos" src="./assests//user-guide.png" alt="">
@@ -53,8 +55,9 @@
                 </div>
             </div>
     </div>
-</div>
+<!-- </div> -->
     <button id="rollTheDiceBtn" onclick="rollTheDice()">Roll The Dice</button>
+</div>
 </body>
 
 <script src="./Scripts/game.js"></script>

@@ -9,7 +9,12 @@
     <link rel="stylesheet" href="./Styles/index.css">
 </head>
 <body>
+    <div id="container">
+    <video autoplay loop muted plays-inline class="background-clip">
+        <source src="./assests/dice_-_50365 (540p).mp4" type="video/mp4">
+    </video>
     <h1 id="heading">Roll The Dice</h1>
+    
     <form onsubmit="handleSubmit(event)">
         <label for="name">Name</label>
         <input id="name" name="name" type="text" placeholder="Enter Your Name">
@@ -17,6 +22,8 @@
         <input id="nickname" name="nickname" type="text" placeholder="Enter Your Nickname">
         <input id="submit" type="submit" value="Play The Game">
     </form>
+    </div>
+    
 </body>
 
 <script src="./Scripts/index.js"></script>

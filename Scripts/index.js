@@ -20,3 +20,7 @@
         
         window.location.href="game.html"
     }
+
+    document.addEventListener("load",function(){
+       
+    })

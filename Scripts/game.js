@@ -4,18 +4,12 @@ let count=0;
 
 function rollTheDice(){
         
-    let n1 = Math.random()*6;
+    let n1 = (Math.random()*6)+1;
     n1 = Math.floor(n1);
 
-    let n2 = Math.random()*6;
+    let n2 = (Math.random()*6)+1;
     n2 = Math.floor(n2);
 
-    if(n1==0){
-        n1=1
-    }
-    if(n2==0){
-        n2=1
-    }
     
     s1+=n1;
 
