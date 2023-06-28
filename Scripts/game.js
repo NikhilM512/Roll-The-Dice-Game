@@ -1,3 +1,7 @@
+let s1=0;
+let s2=0;
+let count=0;
+
 function rollTheDice(){
         
     let n1 = Math.random()*6;
@@ -13,6 +17,13 @@ function rollTheDice(){
         n2=1
     }
     
+    s1+=n1;
+
+    s2+=n2;
+
+    count++;
+
+
     let score1 = document.getElementById("score1");
 
     let score2 = document.getElementById("score2");
@@ -33,25 +44,35 @@ function rollTheDice(){
     if(n1>n2){
         localStorage.setItem("Winner",JSON.stringify(player1));
         localStorage.setItem("Loser",JSON.stringify(player2));
-        localStorage.setItem("Player1Score",JSON.stringify(n1));
-        localStorage.setItem("Player2Score",JSON.stringify(n2));
+        localStorage.setItem("Player1Score",JSON.stringify(s1));
+        localStorage.setItem("Player2Score",JSON.stringify(s2));
     }else if(n1<n2){
         localStorage.setItem("Winner",JSON.stringify(player2));
         localStorage.setItem("Loser",JSON.stringify(player1));
-        localStorage.setItem("Player1Score",JSON.stringify(n1));
-        localStorage.setItem("Player2Score",JSON.stringify(n2));
+        localStorage.setItem("Player1Score",JSON.stringify(s1));
+        localStorage.setItem("Player2Score",JSON.stringify(s2));
         // console.log(n1,n2,"k")
     }else{
         localStorage.setItem("Winner",JSON.stringify("DRAW"));
         localStorage.setItem("Loser",JSON.stringify("DRAW"));
-        localStorage.setItem("Player1Score",JSON.stringify(n1));
-        localStorage.setItem("Player2Score",JSON.stringify(n2));
+        localStorage.setItem("Player1Score",JSON.stringify(s1));
+        localStorage.setItem("Player2Score",JSON.stringify(s2));
     }
-    console.log("Hello")
-    setTimeout(()=>{
-        window.location.href="result.html"
-        // console.log(n1,n2)
-    },1000)
+    console.log("Hello",count)
+    
+    if(count==3){
+
+        document.getElementById("rollTheDiceBtn").disabled=true;
+        document.getElementById("rollTheDiceBtn").style.backgroundColor="rgb(209,3,3,0.5)"
+        
+         setTimeout(()=>{
+            alert("Game Over")
+            window.location.href="result.html";
+        },1500)
+       
+    }
+   
+    
    
 }
 
