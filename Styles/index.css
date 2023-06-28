@@ -1,0 +1,95 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: bisque;
+    font-family:'poppins';
+}
+
+form{
+    border: 3px solid rgb(133, 133, 133);
+    width: 33%;
+    margin: auto;
+    display: flex;
+    padding: 2%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 10px;
+    margin-top: 2%;
+    /* background-color: #ccc; */
+}
+
+#heading{
+    text-align: center;
+    margin-top: 100px;
+    color: rgb(255, 0, 0);
+    font-family: 'poppins';
+    font-weight: bold;
+}
+
+label{
+    margin-bottom:5px;
+    margin-top: 10px;
+    font-family: 'poppins';
+}
+
+input{
+    width: 100%;
+    /* background-color: #ccc; */
+    height: 33px;
+    border-radius: 7px;
+    padding-left: 2%;
+}
+
+#submit{
+    width: 50%;
+    margin: auto;
+    margin-top: 7%;
+    border-radius: 7px;
+    background-color: red;
+    color: #fff;
+    font-weight: 700;
+    border: 0px;
+    font-family: 'Poppins';
+    padding: 1%;
+}
+
+#submit:hover{
+    cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+    form{
+        width: 60%;
+        padding: 20px;
+    }
+    #submit{
+        font-size: small;
+        padding: 0 5px;
+        width: auto;
+    }
+    #heading{
+        margin-bottom: 33px;
+        margin-top: 30%;
+    }
+}
+
+@media screen and (min-width: 767px) and (max-width:1024px) {
+    form{
+        width: 60%;
+        padding: 20px;
+    }
+    #submit{
+        font-size: medium;
+        padding: 0 5px;
+        width: auto;
+    }
+    #heading{
+        margin-bottom: 33px;
+        margin-top: 20%;
+    }
+}

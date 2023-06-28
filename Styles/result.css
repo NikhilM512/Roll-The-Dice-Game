@@ -1,0 +1,88 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fff;
+    font-family:'poppins';
+    /* background-image: url("https://media.istockphoto.com/id/89504250/photo/lucky-says.webp?b=1&s=170667a&w=0&k=20&c=6yjTsiRhoJhOgGLJgt-ieC_-OyahGDeUpP6nnXrC2ao="); */
+}
+
+.hstack{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    /* border: 2px solid #ccc; */
+    align-items: center;
+}
+
+#navbar{
+    height: 70px;
+    background-color: purple;
+    border-radius: 7px;
+}
+
+#navbar h2{
+    margin-left: 5%;
+    color: tomato;
+}
+
+#navbar div{
+    margin-right: 5%;
+}
+
+#navbar img{
+    width: 30px;
+    height: 30px;
+    margin-left: 5%;
+}
+
+#navbar h2{
+    color: tomato;
+    margin-right: 5%;
+}
+
+#result{
+    text-align: center;
+    margin-top: 7%;
+}
+
+#score-board{
+    /* border: 1px solid #000; */
+    width: 60%;
+    margin: auto;
+}
+
+#score-board h2{
+    color: rgb(209,3,3);
+    margin-bottom: 2%;
+    margin-top: 5%;
+}
+
+table{
+    width: 100%;
+}
+
+table,th,tr,td{
+    border: 2px solid #ccc;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+    #navbar h2{
+        font-size: larger;
+    }
+    #result{
+        font-size: x-large;
+        width: 80%;
+        margin: auto;
+        margin-top: 20%;
+        margin-bottom: 10%;
+        text-align: center;
+    }
+}

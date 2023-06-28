@@ -1,0 +1,193 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #ccc;
+    font-family:'poppins';
+    /* background-image: url("https://media.istockphoto.com/id/89504250/photo/lucky-says.webp?b=1&s=170667a&w=0&k=20&c=6yjTsiRhoJhOgGLJgt-ieC_-OyahGDeUpP6nnXrC2ao="); */
+}
+
+.hstack{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    /* border: 2px solid #ccc; */
+    align-items: center;
+}
+
+#navbar{
+    height: 70px;
+    background-color: purple;
+    border-radius: 7px;
+    
+}
+
+#navbar h2{
+    margin-left: 5%;
+    color: tomato;
+}
+
+#navbar div{
+    margin-right: 5%;
+}
+
+#navbar img{
+    width: 30px;
+    height: 30px;
+    margin-left: 5%;
+}
+
+#navbar h2{
+    color: tomato;
+    margin-right: 5%;
+}
+
+#box-2{
+    justify-content: right;
+    margin-right: 3%;
+    padding-top: 2%;
+}
+
+#box-2 h3{
+    color: yellowgreen;
+    font-style: normal;
+    font-weight: bold;
+}
+
+#audio{
+    margin-right: 3%;
+}
+
+#audio:hover,#box-3:hover{
+    cursor: pointer;
+}
+
+.logos{
+    width: 30px;
+}
+#box-3{
+    /* border: 2px solid #ccc; */
+    padding: 5px;
+    background-color: green;
+    color: tomato;
+    border-radius: 10px;
+}
+#heading2,#nickname{
+    text-align: center;
+    color: green;
+    font-family:'poppins' ;
+}
+
+#nickname{
+    margin-top: 70px;
+}
+
+#container{
+    display: flex;
+    margin-top: 2%;
+    /* border: 2px solid red; */
+    justify-content: center;
+}
+
+#box1{
+    margin-right: 2%;
+}
+
+#box2{
+    margin-left: 2%;
+}
+
+#box1,#box2{
+    width: 20%;
+    border:3px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#box1 div,#box2 div{
+    text-align: center;
+}
+
+#box1 h3,#box2 h3{
+    font-size: x-large;
+   
+}
+
+#box1>h3,#box2>h3{
+    margin-bottom: 10px;
+    color: purple;
+}
+
+#box1>div h3,#box2>div h3{
+    margin-top: 10px;
+    color: green;
+}
+
+#box1 h4,#box2 h4{
+    font-size: x-large;
+    color: green;
+}
+#dice1,#dice2{
+    width: 100px;
+    height: 100px;
+}
+
+button{
+    display: block;
+    margin: auto;
+    margin-top: 2%;
+    padding: 10px;
+    font-size: large;
+    color: white;
+    background-color: rgb(209, 3, 3);
+    border-radius: 7px;
+    font-weight: 550;
+    border: 0px;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+    #navbar h2{
+        font-size: larger;
+    }
+    
+    #nickname,#heading2{
+        font-size: x-large;
+        width: 80%;
+        margin: auto;
+        text-align: center;
+    }
+    #nickname{
+        margin-top: 20%;
+    }
+
+    #heading2{
+        margin-bottom: 10%;
+    }
+
+    #dice1,#dice2{
+        width: 75px;
+        height: 75px;
+    }
+
+    #box1 h3,#box2 h3,#box1 h4,#box2 h4{
+        font-size: 16px;
+    }
+
+    button{
+        font-size: medium;
+    }
+
+    #box-2 h3{
+        font-size: medium;
+    }
+}
