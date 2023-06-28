@@ -26,9 +26,20 @@ function rollTheDice(){
     score2.innerHTML = n2;
 
     let dice1 = document.getElementById("dice1");
-    dice1.src=`./assests/dice (${n1}).png`
+    
     let dice2 = document.getElementById("dice2");
-    dice2.src=`./assests/dice (${n2}).png`
+
+    dice1.innerHTML=null;
+    dice2.innerHTML=null;
+    
+    dice1.src="./assests/dice0.gif";
+
+    dice2.src="./assests/dice0.gif";
+
+    dice1.style.boxShadow="none";
+
+    dice2.style.boxShadow="none"
+    
 
     let player1=JSON.parse(localStorage.getItem("Name"));
     let player2="Anonymous";
@@ -53,6 +64,17 @@ function rollTheDice(){
         localStorage.setItem("Player2Score",JSON.stringify(s2));
     }
     console.log("Hello",count)
+
+    setTimeout(()=>{
+        
+        dice1.innerHTML=null;
+        dice2.innerHTML=null;
+        dice1.src=`./assests/dice (${n1}).png`
+        dice2.src=`./assests/dice (${n2}).png`
+        dice1.style.boxShadow="rgba(0,0,0,0.77) 0px 7px 25px"
+        dice2.style.boxShadow="rgba(0,0,0,0.77) 0px 7px 25px"
+
+    },1500)
     
     if(count==3){
 
