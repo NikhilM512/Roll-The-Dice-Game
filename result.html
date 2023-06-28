@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roll The Dice</title>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
     <style>
           *{
             margin: 0%;
@@ -15,7 +17,8 @@
         body{
             width: 100%;
             min-height: 100vh;
-            background-color: #ccc;
+            background-color: #fff;
+            font-family:'poppins';
             /* background-image: url("https://media.istockphoto.com/id/89504250/photo/lucky-says.webp?b=1&s=170667a&w=0&k=20&c=6yjTsiRhoJhOgGLJgt-ieC_-OyahGDeUpP6nnXrC2ao="); */
         }
 
@@ -58,7 +61,29 @@
             margin-top: 7%;
         }
 
-        
+        #score-board{
+            /* border: 1px solid #000; */
+            width: 60%;
+            margin: auto;
+        }
+
+        #score-board h2{
+            color: rgb(209,3,3);
+            margin-bottom: 2%;
+            margin-top: 5%;
+        }
+
+        table{
+            width: 100%;
+        }
+
+        table,th,tr,td{
+            border: 2px solid #ccc;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+
     </style>
 </head>
 <body>
@@ -71,7 +96,30 @@
        </div>
  </div>
 
- <h1 id="result"></h1>
+    <h1 id="result"></h1>
+
+    <div id="score-board">
+
+    <h2>Score-Board</h2>
+
+ <table>
+    <thead>
+        <tr>
+            <th>Sr. No</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+ </table>
+
+</div>
     
 </body>
 <script>
@@ -85,6 +133,28 @@ function addPlayersName(){
      let Navbar_Name = document.getElementById("name");
 
      Navbar_Name.innerText = `${name}`;
+
+     let player1Name = JSON.parse(localStorage.getItem("Player1Name"));
+     let player2Name = JSON.parse(localStorage.getItem("Player2Name"));
+     let player1Score = JSON.parse(localStorage.getItem("Player1Score"));
+     let player2Score = JSON.parse(localStorage.getItem("Player2Score"));
+
+     let Player1_div = document.querySelector("thead>tr>th:nth-child(2)");
+
+     Player1_div.innerHTML=`${player1Name}'s Score`;
+
+     let Player2_div = document.querySelector("thead>tr>th:nth-child(3)");
+
+     Player2_div.innerHTML=`${player2Name}'s Score`;
+
+     let Player1_score_div = document.querySelector("tbody>tr>td:nth-child(2)");
+
+     Player1_score_div.innerHTML=player2Score;
+
+     let Player2__score_div = document.querySelector("tbody>tr>td:nth-child(3)");
+
+     Player2__score_div.innerHTML=player2Score;
+     
 }
 
     let VictoryPhrasesArr = [
@@ -92,7 +162,7 @@ function addPlayersName(){
         "You are the champion..!!!👋",
         "Well performed..👋! You are Winner..!!!👋",
         "Congrats..! You've conquered the game..!!!👋",
-        "Well Done..👋! Victory is Yours..!!!",
+        "Well Done..! Victory is Yours..!!!",
         "What a game Well done..!!!👋",
         "Congrats on your well-deserved win..!!!👋",
         "Congratulations👋! You won!",
@@ -143,10 +213,12 @@ function addPlayersName(){
             res.style.color="red"
         }else{
             let randomNo=Math.floor(Math.random()*(DrawPhrasesArr.length-1));
-            console.log(randomNo)
             res.innerText=DrawPhrasesArr[randomNo];
             res.style.color="orange"
         }
+
+
+
     }
 
 </script>
